@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Figuras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label, select, input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Figuras</h1>
+    <div class="container">
+        <form id="calculatorForm">
+            <label for="figura">Seleccione la figura:</label>
+            <select id="figura">
+                <option value="cuadrado">Cuadrado</option>
+                <option value="circulo">Círculo</option>
+                <option value="cubo">Cubo</option>
+                <option value="esfera">Esfera</option>
+            </select>
+
+            <label for="calculo">Seleccione el cálculo:</label>
+            <select id="calculo">
+                <option value="perimetro">Perímetro</option>
+                <option value="area">Área</option>
+                <option value="volumen">Volumen</option>
+            </select>
+
+            <label for="valor">Ingrese el valor (lado/radio):</label>
+            <input type="number" id="valor" step="0.01" required>
+
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+        <div class="result" id="resultado"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            const figura = document.getElementById("figura").value;
+            const calculo = document.getElementById("calculo").value;
+            const valor = parseFloat(document.getElementById("valor").value);
+
+            if (isNaN(valor) || valor <= 0) {
+                document.getElementById("resultado").innerText = "Por favor, ingrese un valor válido.";
+                return;
+            }
+
+            let resultado;
+
+            switch (figura) {
+                case "cuadrado":
+                    if (calculo === "perimetro") {
+                        resultado = 4 * valor;
+                    } else if (calculo === "area") {
+                        resultado = valor ** 2;
+                    } else {
+                        resultado = "Un cuadrado no tiene volumen.";
+                    }
+                    break;
+
+                case "circulo":
+                    if (calculo === "perimetro") {
+                        resultado = 2 * Math.PI * valor;
+                    } else if (calculo === "area") {
+                        resultado = Math.PI * valor ** 2;
+                    } else {
+                        resultado = "Un círculo no tiene volumen.";
+                    }
+                    break;
+
+                case "cubo":
+                    if (calculo === "volumen") {
+                        resultado = valor ** 3;
+                    } else {
+                        resultado = "Un cubo no tiene perímetro o área plana.";
+                    }
+                    break;
+
+                case "esfera":
+                    if (calculo === "volumen") {
+                        resultado = (4 / 3) * Math.PI * valor ** 3;
+                    } else {
+                        resultado = "Una esfera no tiene perímetro o área plana.";
+                    }
+                    break;
+
+                default:
+                    resultado = "Figura o cálculo no válido.";
+            }
+
+            document.getElementById("resultado").innerText = `Resultado: ${resultado.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
