@@ -3,33 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Figuras Jose Ortiz </title>
+    <title>Calculadora de Figuras Jose Ortiz</title>
     <style>
+        /* Fondo con imagen */
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://via.placeholder.com/1920x1080'); /* Cambia la URL a tu imagen */
+            background-size: cover; /* Ajusta la imagen para cubrir toda la página */
+            background-repeat: no-repeat; /* Evita repeticiones de la imagen */
+            background-position: center; /* Centra la imagen */
+            color: #fff; /* Cambia el color del texto para que sea legible */
         }
+
         h1 {
             text-align: center;
-            color: #333;
+            color: #fff; /* Color blanco para el título */
+            margin-top: 20px;
         }
+
         .container {
             max-width: 500px;
-            margin: 0 auto;
+            margin: 50px auto;
             padding: 20px;
-            background: #fff;
+            background: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
         label, select, input, button {
             display: block;
             width: 100%;
             margin-bottom: 15px;
             padding: 10px;
             font-size: 16px;
+            color: #333;
         }
+
         button {
             background-color: #007BFF;
             color: white;
@@ -37,9 +48,11 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         .result {
             text-align: center;
             font-size: 18px;
@@ -49,7 +62,7 @@
     </style>
 </head>
 <body>
-    <h1>Calculadora de Figuras Jose Ortiz </h1>
+    <h1>Calculadora de Figuras Jose Ortiz</h1>
     <div class="container">
         <form id="calculatorForm">
             <label for="figura">Seleccione la figura:</label>
@@ -134,3 +147,4 @@
     </script>
 </body>
 </html>
+
