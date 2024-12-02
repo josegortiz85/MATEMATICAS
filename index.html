@@ -3,53 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Figuras Jose Ortiz </title>
+    <title>Calculadora de Figuras Jose Ortiz</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f9;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        label, select, input, button {
-            display: block;
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
+        /* Estilos aquí */
     </style>
 </head>
 <body>
-    <h1>Calculadora de Figuras Jose Ortiz </h1>
+    <h1>Calculadora de Figuras Jose Ortiz</h1>
     <div class="container">
         <form id="calculatorForm">
             <label for="figura">Seleccione la figura:</label>
@@ -59,17 +19,14 @@
                 <option value="cubo">Cubo</option>
                 <option value="esfera">Esfera</option>
             </select>
-
             <label for="calculo">Seleccione el cálculo:</label>
             <select id="calculo">
                 <option value="perimetro">Perímetro</option>
                 <option value="area">Área</option>
                 <option value="volumen">Volumen</option>
             </select>
-
             <label for="valor">Ingrese el valor (lado/radio):</label>
             <input type="number" id="valor" step="0.01" required>
-
             <button type="button" onclick="calcular()">Calcular</button>
         </form>
         <div class="result" id="resultado"></div>
